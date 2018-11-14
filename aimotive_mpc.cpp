@@ -246,8 +246,8 @@ std::vector<double> AimotiveMpc::Solve(
   // options for IPOPT solver
   std::string options;
   // Uncomment next line for more IPOPT solver Info for debugging.
-  // O += "Integer print_level  4\n";
-  options += "Integer print_level  4\n";
+  // options += "Integer print_level  4\n";
+  options += "Integer print_level  0\n";
   options += "String sb  yes\n";
   // Maximum number of iterations
   options += "Integer max_iter  1000\n";
@@ -279,30 +279,31 @@ std::vector<double> AimotiveMpc::Solve(
 
   std::vector<double> mpc_result { Mpc_vel, Mpc_acc, Mpc_jerk };
 
-
+  return mpc_result;
   
 
   // The rest of the code is for debugging purposes only.
+  /*
   // Cost
-  //auto cost = solution.obj_value;
-  //std::cout << "Cost " << cost << std::endl;
+  auto cost = solution.obj_value;
+  std::cout << "Cost " << cost << std::endl;
 
   Dvector Xresult;
   Dvector Vresult;
   Dvector Accresult;
   Dvector Jerkresult;
-  // Dvector timeresult; 
+   Dvector timeresult; 
 
-  //result.push_back(solution.x[acc_start]);
+  result.push_back(solution.x[acc_start]);
 
-  /* int solution_size = solution.x.size();
+   int solution_size = solution.x.size();
 
   std::cout<<"the size of solution vector is "<<solution_size<<"\n";
 
   for ( i = 0; i < N; i++) {
     Xresult.push_back(solution.x[x_start + i ]);
   }
-    std::cout<<"The Xresult is : "<<Xresult<<"\n";*/
+    std::cout<<"The Xresult is : "<<Xresult<<"\n";
 
   for (size_t i = 0; i < N; i++) {
     Vresult.push_back(solution.x[vel_start + i ]);
@@ -319,13 +320,13 @@ std::vector<double> AimotiveMpc::Solve(
   }
     std::cout << "The Jerkresult is : " << Jerkresult << "\n";
 
- /* for ( i = 0; i < N; i++) {
+  for ( i = 0; i < N; i++) {
     timeresult.push_back(solution.x[time_start + i ]);
   }
     std::cout<<"The Timeresult is : "<<timeresult<<"\n";
 
     std::cout<<"The Optimization Cost is : "<<cost<<"\n"; */
-    return mpc_result;
+  
 }
 
 
