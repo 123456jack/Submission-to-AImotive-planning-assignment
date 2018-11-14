@@ -1,0 +1,6 @@
+/home/zamzami/planning_assignment/world/build/CMakeFiles/rebuild_cache.dir
+/home/zamzami/planning_assignment/world/build/CMakeFiles/client_controller.dir
+/home/zamzami/planning_assignment/world/build/CMakeFiles/edit_cache.dir
+/home/zamzami/planning_assignment/world/build/msgs/CMakeFiles/rebuild_cache.dir
+/home/zamzami/planning_assignment/world/build/msgs/CMakeFiles/world_state_msgs.dir
+/home/zamzami/planning_assignment/world/build/msgs/CMakeFiles/edit_cache.dir
