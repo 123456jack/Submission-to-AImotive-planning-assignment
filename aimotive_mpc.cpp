@@ -134,7 +134,7 @@ class FG_eval {
       // v[t+1] = v[t] + dt * a0 + 1/2 * (dt)^2 * jerk
       // a[t+1] = a[t] + dt * jerk
 
-      fg[1 + x_start + t] = x1 - (x0 + v0 * dt + 0.5* CppAD::pow(dt, 2) * a0 + 0.333 * CppAD::pow(dt, 3) * jerk);
+      fg[1 + x_start + t] = x1 - (x0 + v0 * dt + 0.5* CppAD::pow(dt, 2) * a0 + 0.166 * CppAD::pow(dt, 3) * jerk);
       fg[1 + vel_start + t] = v1 - (v0 + a0 * dt + 0.5* CppAD::pow(dt, 2) * jerk);
       fg[1 + acc_start + t] = a1 - (a0 + jerk * dt);
 
